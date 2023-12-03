@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Admin Dashboard - User Management Interface
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This Admin Dashboard provides a user interface for admins to view, edit, and delete users. The users are retrieved via an API, and the UI includes features such as searching, pagination, row editing, and batch deletion.
 
-In the project directory, you can run:
+## Functionalities
 
-### `npm start`
+1. **Column Titles and Styling:**
+   - Column titles are designed to stand out from the entries for easy identification.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Search Bar:**
+   - Use the search bar to filter users based on any property.
+   - Placeholder text starts with "Search."
+   - You can trigger the search either by clicking the search icon or pressing ENTER.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Row Editing:**
+   - Click the "Edit" icon in a row to enable in-place editing.
+   - After editing, save the changes by navigating away from the edited field.
 
-### `npm test`
+4. **Row Deletion:**
+   - To delete a single row, select the row and click the "Delete" button in that row (bin icon).
+   - To delete multiple selected rows, use the "Delete Selected" button at the bottom left.
+   - A row must be selected before attempting deletion.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Pagination:**
+   - Pagination is implemented, displaying 10 rows per page.
+   - Buttons at the bottom allow you to navigate to the first, previous, next, or last page.
+   - Pagination updates dynamically based on search/filtering results.
+   - If there are, for example, 25 records matching a search query, pagination buttons will go up to page 3.
 
-### `npm run build`
+6. **Row Selection:**
+   - Use the checkbox at the top left to select or deselect all displayed rows on the current page.
+   - Selected rows are highlighted with a grayish background color.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API Endpoint
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Request Type:** GET
+- **Endpoint:** [https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json](https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sample Response
 
-### `npm run eject`
+```json
+[
+  {
+    "id": "1",
+    "name": "Aaron Miles",
+    "email": "aaron@mailinator.com",
+    "role": "member"
+  },
+  {
+    "id": "2",
+    "name": "Aishwarya Naik",
+    "email": "aishwarya@mailinator.com",
+    "role": "member"
+  },
+  {
+    "id": "3",
+    "name": "Arvind Kumar",
+    "email": "arvind@mailinator.com",
+    "role": "admin"
+  }
+]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Deployed Link:
+https://admin-dashboard797.netlify.app/
